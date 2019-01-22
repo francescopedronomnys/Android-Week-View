@@ -846,7 +846,9 @@ public class WeekView extends View {
         }
 
         // Clip to paint events only.
-        canvas.clipRect(mHeaderColumnWidth, mHeaderHeight + mHeaderRowPadding * 2 + mHeaderMarginBottom + mTimeTextHeight / 2, getWidth(), getHeight(), Region.Op.REPLACE);
+        canva.save();
+        canvas.clipRect(mHeaderColumnWidth, mHeaderHeight + mHeaderRowPadding * 2 + mHeaderMarginBottom + mTimeTextHeight / 2, getWidth(), getHeight());
+        canvas.restore();
 
         // Iterate through each day.
         Calendar oldFirstVisibleDay = mFirstVisibleDay;
