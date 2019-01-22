@@ -846,7 +846,7 @@ public class WeekView extends View {
         }
 
         // Clip to paint events only.
-        canva.save();
+        canvas.save();
         canvas.clipRect(mHeaderColumnWidth, mHeaderHeight + mHeaderRowPadding * 2 + mHeaderMarginBottom + mTimeTextHeight / 2, getWidth(), getHeight());
         canvas.restore();
 
