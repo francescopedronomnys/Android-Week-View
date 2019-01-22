@@ -732,7 +732,10 @@ public class WeekView extends View {
         canvas.drawRect(0, mHeaderHeight + mHeaderRowPadding * 2, mHeaderColumnWidth, getHeight(), mHeaderColumnBackgroundPaint);
 
         // Clip to paint in left column only.
-        canvas.clipRect(0, mHeaderHeight + mHeaderRowPadding * 2, mHeaderColumnWidth, getHeight(), Region.Op.REPLACE);
+        canvas.save();
+
+        canvas.clipRect(0, mHeaderHeight + mHeaderRowPadding * 2, mHeaderColumnWidth, getHeight());
+        canvas.restore();
 
         for (int i = 0; i < getNumberOfPeriods(); i++) {
             // If we are showing half hours (eg. 5:30am), space the times out by half the hour height
